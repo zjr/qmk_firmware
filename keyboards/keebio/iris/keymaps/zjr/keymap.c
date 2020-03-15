@@ -125,19 +125,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   return true;
 }
 
-void encoder_update_user(uint8_t index, bool clockwise) {
-    if (index == 0) {
-        if (clockwise) {
-            tap_code(KC_VOLU);
-        } else {
-            tap_code(KC_VOLD);
-        }
-    }
-    else if (index == 1) {
-        if (clockwise) {
-            tap_code(KC_PGDN);
-        } else {
-            tap_code(KC_PGUP);
-        }
-    }
+void suspend_power_down_user(void) {
+    rgblight_disable_noeeprom();
+    backlight_disable();
+}
+
+void suspend_wakeup_init_user(void) {
+    rgblight_enable_noeeprom();
+    backlight_enable();
 }
