@@ -105,6 +105,7 @@ __pycache__
 # Prerequisites for updating ChibiOS
 /util/fmpp*
 
+<<<<<<< HEAD
 # Allow to exist but don't include it in the repo
 user_song_list.h
 
