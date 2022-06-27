@@ -71,6 +71,7 @@ CMakeLists.txt
 .vscode/last.sql
 .vscode/launch.json
 .vscode/tasks.json
+.vscode/settings.json
 .vscode/temp.sql
 tags
 
