@@ -30,14 +30,14 @@ const int DOT_ALT = MT(MOD_RALT, KC_PDOT);
 const int SPC_CTL = MT(MOD_LCTL, KC_SPC);
 const int ADJ_0 = LT(ADJUST, KC_0);
 
-/* enum { */
-/*   TD_ALT_SWAP, */
-/* }; */
+enum {
+  TD_ALT_SWAP,
+};
 
-/* tap_dance_action_t tap_dance_actions[] = { */
-/*   // Tap once for left alt, twice for right alt */
-/*   [TD_ALT_SWAP] = ACTION_TAP_DANCE_DOUBLE(KC_LALT, KC_RALT), */
-/* }; */
+tap_dance_action_t tap_dance_actions[] = {
+  // Tap once for left alt, twice for right alt
+  [TD_ALT_SWAP] = ACTION_TAP_DANCE_DOUBLE(KC_LALT, KC_RALT),
+};
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
@@ -51,7 +51,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //├────────┼────────┼────────┼────────┼────────┼────────┼────────┐        ┌────────┼────────┼────────┼────────┼────────┼────────┼────────┤
      KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_ENT,           KC_SPC,  KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,
   //└────────┴────────┴────────┴───┬────┴───┬────┴───┬────┴───┬────┘        └───┬────┴───┬────┴───┬────┴───┬────┴────────┴────────┴────────┘
-                                    KC_LGUI, LOWER,   KC_ENT,                    SPC_CTL, RAISE,   DOT_ALT
+                                    KC_LGUI, LOWER,   KC_ENT,                    SPC_CTL, RAISE,   TD_ALT_SWAP
                                 // └────────┴────────┴────────┘                 └────────┴────────┴────────┘
   ),
 
